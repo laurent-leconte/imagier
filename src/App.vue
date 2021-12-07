@@ -12,29 +12,31 @@
       </div>
     </div>
     <div id="app-footer">
-      <div v-for="letter of alphabet" v-bind:key="letter" class="letter">
-        <p>{{ letter }}</p>
-      </div>
+      <key
+        v-for="letter of alphabet"
+        v-bind:key="letter"
+        v-bind:letter="letter"
+      >
+      </key>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Key from "./components/Key.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    Key,
   },
 })
 export default class App extends Vue {
-  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
 </script>
 
 <style>
-
 body {
   margin: 0;
   padding: 0;
@@ -56,8 +58,8 @@ body {
   border-color: blueviolet;
   border-width: 2px;
   border-style: solid;
-
 }
+
 #app-body {
   border-color: red;
   border-style: solid;
@@ -87,25 +89,9 @@ body {
   padding: 0 100px 0 100px;
 }
 
-.letter {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  padding: 0 10px 0 10px;
-  margin: 10px;
-  background-color: #ecf0f1;
-  min-width: 50px;
-}
-
 @media screen and (max-width: 800px) {
   #app-body {
     flex-direction: column;
   }
-
-  .letter {
-    min-width: 30px;
-    min-height: 30px;
-  }
 }
-
 </style>
