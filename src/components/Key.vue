@@ -1,6 +1,5 @@
 <template>
-  <button class="letter" @click="pushKey">
-    <p>{{ letter }}</p>
+  <button type="button" class="letter" @click="pushKey">{{ letter }}
   </button>
 </template>
 
@@ -21,13 +20,11 @@ export default class Key extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .letter {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
   padding: 0 10px 0 10px;
   margin: 10px;
   background-color: #ecf0f1;
   min-width: 50px;
+  min-height: 50px;
 }
 
 @media screen and (max-width: 800px) {

@@ -1,0 +1,20 @@
+[
+  {
+    "label": "licorne",
+    "image": "licorne.png",
+    "sound": "",
+    "attribution": "Image par <a href='https://pixabay.com/fr/users/7089643-7089643/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3739326'>Please Don't sell My Artwork AS IS</a>"
+  },
+  {
+    "label": "chat",
+    "attribution": "Image par <a href='https://pixabay.com/fr/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1297724'>OpenClipart-Vectors</a>",
+    "image": "chat.png",
+    "sound": ""
+  },
+  {
+    "label": "chien",
+    "image": "chien.jpg",
+    "sound": "",
+    "attribution":"<a href='http://www.freepik.com'>Designed by catalyststuff / Freepik</a>"
+  }
+]
