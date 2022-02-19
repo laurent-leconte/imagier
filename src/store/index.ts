@@ -6,34 +6,39 @@ import { Image } from "@/models";
 Vue.use(Vuex);
 
 class State {
-  letters: string[] = [];
   imageList: Image[] = images;
   currentImage: Image =
     this.imageList[Math.floor(Math.random() * this.imageList.length)];
-  guessed: boolean[] = Array(this.currentImage.label.length).fill(true);
+  currentIndex = 0;
+  currentLabel: string = this.currentImage.label.toLocaleUpperCase();
+  guessed: boolean[] = Array(this.currentImage.label.length).fill(false);
 }
 
 export default new Vuex.Store({
   state: new State(),
   getters: {
-    currentGuess(state: State): string {
-      return state.letters.join("");
-    },
     currentImage(state: State): Image {
       return state.currentImage;
     },
     guessed(state: State): boolean[] {
       return state.guessed;
     },
+    currentLabel(state: State): string {
+      return state.currentLabel;
+    },
   },
   mutations: {
     pushLetter(state: State, letter: string) {
-      state.letters = [...state.letters, letter];
+      if (state.currentLabel.charAt(state.currentIndex) === letter) {
+        state.guessed[state.currentIndex] = true;
+        state.currentIndex++;
+      }
     },
     newImage(state: State) {
       state.currentImage =
         state.imageList[Math.floor(Math.random() * state.imageList.length)];
       state.guessed = Array(state.currentImage.label.length).fill(false);
+      state.currentIndex = 0;
     },
   },
   actions: {},

@@ -18,6 +18,7 @@ import Guess from "@/components/Guess.vue";
 
 @Component({ components: { Guess } })
 export default class GuessPanel extends Vue {
+  //TODO : change getters to mapState from vuex
   get image(): Image {
     return this.$store.getters.currentImage;
   }
