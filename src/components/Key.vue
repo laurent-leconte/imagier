@@ -1,18 +1,16 @@
 <template>
-  <button type="button" class="letter" @click="pushKey">{{ letter }}
-  </button>
+  <button type="button" class="letter" @click="pushKey">{{ letter }}</button>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import store from "@/store";
 
 @Component
 export default class Key extends Vue {
   @Prop() private letter!: string;
 
   private pushKey() {
-    store.commit("pushLetter", this.letter);
+    this.$store.commit("pushLetter", this.letter);
   }
 }
 </script>
@@ -25,6 +23,7 @@ export default class Key extends Vue {
   background-color: #ecf0f1;
   min-width: 50px;
   min-height: 50px;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 800px) {
