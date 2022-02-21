@@ -1,16 +1,22 @@
 <template>
-  <button type="button" class="letter" @click="pushKey">{{ letter }}</button>
+  <button type="button" class="letter" @click="pushKey">
+    {{ letter }}
+  </button>
 </template>
 
 <script lang="ts">
+import { mapActions } from "vuex";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
+@Component({
+  methods: { ...mapActions(["pressLetter"]) },
+})
 export default class Key extends Vue {
   @Prop() private letter!: string;
 
-  private pushKey() {
-    this.$store.commit("pushLetter", this.letter);
+  pressLetter!: (letter: string) => void;
+  pushKey() {
+    this.pressLetter(this.letter);
   }
 }
 </script>

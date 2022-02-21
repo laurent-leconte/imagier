@@ -13,21 +13,26 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { mapGetters, mapState } from "vuex";
 import { Image } from "@/models";
 import Guess from "@/components/Guess.vue";
 
-@Component({ components: { Guess } })
+@Component({
+  components: { Guess },
+  computed: {
+    ...mapState({
+      image: "currentImage",
+      guessed: "guessed",
+    }),
+    ...mapGetters({
+      imageLabel: "currentLabel",
+    }),
+  },
+})
 export default class GuessPanel extends Vue {
-  //TODO : change getters to mapState from vuex
-  get image(): Image {
-    return this.$store.getters.currentImage;
-  }
-  get imageLabel(): string {
-    return this.image.label.toUpperCase();
-  }
-  get guessed(): boolean[] {
-    return this.$store.getters.guessed;
-  }
+  image!: Image;
+  imageLabel!: string;
+  guessed!: boolean[];
 }
 </script>
 

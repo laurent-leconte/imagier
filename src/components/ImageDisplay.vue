@@ -6,14 +6,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
+import { mapState } from "vuex";
 import { Image } from "@/models";
 
-@Component
+@Component({
+  computed: {
+    ...mapState({
+      image: "currentImage",
+    }),
+  },
+})
 export default class ImageDisplay extends Vue {
-  get image(): Image {
-    return this.$store.getters.currentImage;
-  }
+  image!: Image;
   get imageUrl(): string {
     return require("@/assets/images/" + this.image.image);
   }

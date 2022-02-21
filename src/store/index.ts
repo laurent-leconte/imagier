@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { ActionContext, mapGetters } from "vuex";
 import images from "@/assets/images.json";
 import { Image } from "@/models";
 
@@ -10,29 +10,29 @@ class State {
   currentImage: Image =
     this.imageList[Math.floor(Math.random() * this.imageList.length)];
   currentIndex = 0;
-  currentLabel: string = this.currentImage.label.toLocaleUpperCase();
   guessed: boolean[] = Array(this.currentImage.label.length).fill(false);
 }
+
+type Context = ActionContext<State, State>;
 
 export default new Vuex.Store({
   state: new State(),
   getters: {
-    currentImage(state: State): Image {
-      return state.currentImage;
-    },
-    guessed(state: State): boolean[] {
-      return state.guessed;
-    },
     currentLabel(state: State): string {
-      return state.currentLabel;
+      return state.currentImage.label.toLocaleUpperCase();
+    },
+    currentLetter(state: State, getters): string {
+      return getters.currentLabel[state.currentIndex];
+    },
+    is_won(state: State, getters): boolean {
+      return state.currentIndex === getters.currentLabel.length;
     },
   },
   mutations: {
-    pushLetter(state: State, letter: string) {
-      if (state.currentLabel.charAt(state.currentIndex) === letter) {
-        state.guessed[state.currentIndex] = true;
-        state.currentIndex++;
-      }
+    incrementGuessed(state: State) {
+      state.guessed[state.currentIndex] = true;
+      state.guessed = [...state.guessed];
+      state.currentIndex++;
     },
     newImage(state: State) {
       state.currentImage =
@@ -41,6 +41,13 @@ export default new Vuex.Store({
       state.currentIndex = 0;
     },
   },
-  actions: {},
+  actions: {
+    pressLetter({ getters, commit }: Context, letter: string) {
+      if (getters.currentLetter === letter) {
+        commit("incrementGuessed");
+        // check if won here
+      }
+    },
+  },
   modules: {},
 });
