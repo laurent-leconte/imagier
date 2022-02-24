@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuex, { ActionContext, mapGetters } from "vuex";
+import Vuex, { ActionContext } from "vuex";
 import images from "@/assets/images.json";
 import { Image } from "@/models";
 
@@ -45,7 +45,9 @@ export default new Vuex.Store({
     pressLetter({ getters, commit }: Context, letter: string) {
       if (getters.currentLetter === letter) {
         commit("incrementGuessed");
-        // check if won here
+      }
+      if (getters.is_won) {
+        setTimeout(() => commit("newImage"), 2000);
       }
     },
   },

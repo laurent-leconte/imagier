@@ -23,10 +23,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import Key from "@/components/Key.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
 import GuessPanel from "@/components/GuessPanel.vue";
+import { mapGetters } from "vuex";
 
 @Component({
   components: {
@@ -34,9 +35,24 @@ import GuessPanel from "@/components/GuessPanel.vue";
     ImageDisplay,
     GuessPanel,
   },
+  computed: { ...mapGetters(["is_won"]) },
 })
 export default class App extends Vue {
   alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  is_won!: boolean;
+
+  @Watch("is_won")
+  onWonChanged = (newval: boolean) => {
+    if (newval) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      this.$confetti.start();
+    } else {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      this.$confetti.stop();
+    }
+  };
 }
 </script>
 
