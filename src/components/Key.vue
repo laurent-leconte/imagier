@@ -15,7 +15,7 @@ export default class Key extends Vue {
   @Prop() private letter!: string;
 
   pressLetter!: (letter: string) => void;
-  pushKey() {
+  pushKey(): void {
     this.pressLetter(this.letter);
   }
 }

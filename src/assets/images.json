@@ -15,6 +15,78 @@
     "label": "chien",
     "image": "chien.jpg",
     "sound": "",
-    "attribution":"<a href='http://www.freepik.com'>Designed by catalyststuff / Freepik</a>"
+    "attribution": "<a href='http://www.freepik.com'>Designed by catalyststuff / Freepik</a>"
+  },
+  {
+    "label": "bonnet",
+    "image": "bonnet.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
+  },
+  {
+    "label": "manteau",
+    "image": "manteau.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
+  },
+  {
+    "label": "bottes",
+    "image": "bottes.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
+  },
+  {
+    "label": "lion",
+    "image": "lion.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
+  },
+  {
+    "label": "tigre",
+    "image": "tigre.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
+  },
+  {
+    "label": "renard",
+    "image": "renard.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
+  },
+  {
+    "label": "lapin",
+    "image": "lapin.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
+  },
+  {
+    "label": "zebre",
+    "image": "zebre.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "girafe",
+    "image": "girafe.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "elephant",
+    "image": "elephant.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "koala",
+    "image": "koala.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "panda",
+    "image": "panda.png",
+    "sound": "",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   }
 ]

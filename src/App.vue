@@ -12,12 +12,14 @@
       </div>
     </div>
     <div id="app-footer">
-      <key
-        v-for="letter of alphabet"
-        v-bind:key="letter"
-        v-bind:letter="letter"
-      >
-      </key>
+      <div id="keyboard">
+        <key
+          v-for="letter of alphabet"
+          v-bind:key="letter"
+          v-bind:letter="letter"
+        >
+        </key>
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +44,7 @@ export default class App extends Vue {
   is_won!: boolean;
 
   @Watch("is_won")
-  onWonChanged = (newval: boolean) => {
+  onWonChanged = (newval: boolean): void => {
     if (newval) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
@@ -94,6 +96,11 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   padding: 0 100px 0 100px;
+}
+
+#keyboard {
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 @media screen and (max-width: 800px) {
