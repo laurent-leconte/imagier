@@ -2,91 +2,91 @@
   {
     "label": "licorne",
     "image": "licorne.png",
-    "sound": "",
+    "sound": "licorne.mp3",
     "attribution": "Image par <a href='https://pixabay.com/fr/users/7089643-7089643/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3739326'>Please Don't sell My Artwork AS IS</a>"
   },
   {
     "label": "chat",
-    "attribution": "Image par <a href='https://pixabay.com/fr/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1297724'>OpenClipart-Vectors</a>",
     "image": "chat.png",
-    "sound": ""
+    "sound": "chat.mp3",
+    "attribution": "Image par <a href='https://pixabay.com/fr/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1297724'>OpenClipart-Vectors</a>"
   },
   {
     "label": "chien",
     "image": "chien.jpg",
-    "sound": "",
+    "sound": "chien.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by catalyststuff / Freepik</a>"
   },
   {
     "label": "bonnet",
     "image": "bonnet.png",
-    "sound": "",
+    "sound": "bonnet.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
   },
   {
     "label": "manteau",
     "image": "manteau.png",
-    "sound": "",
+    "sound": "manteau.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
   },
   {
     "label": "bottes",
     "image": "bottes.png",
-    "sound": "",
+    "sound": "bottes.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by Freepik</a>"
   },
   {
     "label": "lion",
     "image": "lion.png",
-    "sound": "",
+    "sound": "lion.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
   },
   {
     "label": "tigre",
     "image": "tigre.png",
-    "sound": "",
+    "sound": "tigre.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
   },
   {
     "label": "renard",
     "image": "renard.png",
-    "sound": "",
+    "sound": "renard.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
   },
   {
     "label": "lapin",
     "image": "lapin.png",
-    "sound": "",
+    "sound": "lapin.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by grmarc / Freepik</a>"
   },
   {
     "label": "zebre",
     "image": "zebre.png",
-    "sound": "",
+    "sound": "zebre.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   },
   {
     "label": "girafe",
     "image": "girafe.png",
-    "sound": "",
+    "sound": "girafe.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   },
   {
     "label": "elephant",
     "image": "elephant.png",
-    "sound": "",
+    "sound": "elephant.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   },
   {
     "label": "koala",
     "image": "koala.png",
-    "sound": "",
+    "sound": "koala.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   },
   {
     "label": "panda",
     "image": "panda.png",
-    "sound": "",
+    "sound": "panda.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
   }
 ]
