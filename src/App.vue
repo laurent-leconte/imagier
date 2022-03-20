@@ -29,7 +29,7 @@ import { Component, Vue, Watch } from "vue-property-decorator";
 import Key from "@/components/Key.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
 import GuessPanel from "@/components/GuessPanel.vue";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 @Component({
   components: {
@@ -38,10 +38,21 @@ import { mapGetters } from "vuex";
     GuessPanel,
   },
   computed: { ...mapGetters(["is_won"]) },
+  methods: { ...mapActions(["pressLetter"]) },
 })
 export default class App extends Vue {
   alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   is_won!: boolean;
+  pressLetter!: (letter: string) => void;
+
+  mounted(): void {
+    window.addEventListener("keypress", (e) => {
+      const key = e.key.toUpperCase();
+      if (this.alphabet.includes(key)) {
+        this.pressLetter(key);
+      }
+    });
+  }
 
   @Watch("is_won")
   onWonChanged = (newval: boolean): void => {
