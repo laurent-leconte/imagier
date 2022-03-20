@@ -1,12 +1,12 @@
 <template>
   <div>
     <h2>{{ imageLabel }}</h2>
-    <img :src="imageUrl" />
+    <img :src="imageUrl" @click="playSound" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import { mapState } from "vuex";
 import { Image } from "@/models";
 
@@ -25,6 +25,19 @@ export default class ImageDisplay extends Vue {
   get imageLabel(): string {
     return this.image.label.toUpperCase();
   }
+  get imageSound(): string {
+    return require("@/assets/sounds/" + this.image.sound);
+  }
+
+  playSound(): void {
+    const audio = new Audio(this.imageSound);
+    audio.play();
+  }
+
+  @Watch("image")
+  onImageChanged = (): void => {
+    this.playSound();
+  };
 }
 </script>
 
