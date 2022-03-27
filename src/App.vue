@@ -17,6 +17,7 @@
           v-for="letter of alphabet"
           v-bind:key="letter"
           v-bind:letter="letter"
+          v-bind:color="rainbow[letter]"
         >
         </key>
       </div>
@@ -26,10 +27,11 @@
 
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
+import { mapGetters, mapActions } from "vuex";
+import { alphabet, rainbow } from "@/services/constants";
 import Key from "@/components/Key.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
 import GuessPanel from "@/components/GuessPanel.vue";
-import { mapGetters, mapActions } from "vuex";
 
 @Component({
   components: {
@@ -41,14 +43,15 @@ import { mapGetters, mapActions } from "vuex";
   methods: { ...mapActions(["pressLetter"]) },
 })
 export default class App extends Vue {
-  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  alphabet = alphabet; // maps the imported alphabet constant to a property that can be accessed from the template
+  rainbow = rainbow;
   is_won!: boolean;
   pressLetter!: (letter: string) => void;
 
   mounted(): void {
     window.addEventListener("keypress", (e) => {
       const key = e.key.toUpperCase();
-      if (this.alphabet.includes(key)) {
+      if (alphabet.includes(key)) {
         this.pressLetter(key);
       }
     });

@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="letter" @click="pushKey">
+  <button type="button" class="letter" @click="pushKey" :style="cssProps">
     {{ letter }}
   </button>
 </template>
@@ -13,10 +13,17 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 })
 export default class Key extends Vue {
   @Prop() private letter!: string;
+  @Prop() private color!: string;
 
-  pressLetter!: (letter: string) => void;
+  pressLetter!: (letter: string) => void; // declare the dynamically-loaded pressLetter method
   pushKey(): void {
     this.pressLetter(this.letter);
+  }
+
+  get cssProps(): { [key: string]: string } {
+    return {
+      "--background-color": this.color,
+    };
   }
 }
 </script>
@@ -26,10 +33,11 @@ export default class Key extends Vue {
 .letter {
   padding: 0 10px 0 10px;
   margin: 10px;
-  background-color: #ecf0f1;
+  background-color: var(--background-color);
   min-width: 50px;
   min-height: 50px;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 800px) {
