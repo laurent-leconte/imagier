@@ -15,10 +15,10 @@
 import { Component, Vue } from "vue-property-decorator";
 import { mapGetters, mapState } from "vuex";
 import { Image } from "@/models";
-import Guess from "@/components/Guess.vue";
+import GuessBox from "@/components/GuessBox.vue";
 
 @Component({
-  components: { Guess },
+  components: { GuessBox },
   computed: {
     ...mapState({
       image: "currentImage",

@@ -8,7 +8,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class Guess extends Vue {
+export default class GuessBox extends Vue {
   @Prop({ default: " " }) readonly letter!: string;
   @Prop({ default: false }) visible!: boolean;
 }
