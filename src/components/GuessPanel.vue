@@ -1,7 +1,7 @@
 <template>
   <div class="guess-panel">
     <div class="guess-panel-row">
-      <guess
+      <guess-box
         v-for="(letter, index) in imageLabel"
         :key="index"
         :letter="letter"
@@ -38,7 +38,6 @@ export default class GuessPanel extends Vue {
 
 <style scoped>
 .guess-panel {
-  height: 100%;
   display: flex;
 }
 .guess-panel-row {

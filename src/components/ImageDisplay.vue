@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>{{ imageLabel }}</h2>
     <img :src="imageUrl" @click="playSound" />
   </div>
 </template>
@@ -44,7 +43,7 @@ export default class ImageDisplay extends Vue {
 <style scoped>
 img {
   max-width: 100%;
-  max-height: 360px;
+  max-height: 400px;
 }
 
 h2 {

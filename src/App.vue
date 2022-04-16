@@ -8,6 +8,7 @@
         <image-display />
       </div>
       <div id="app-body-right">
+        <label-display />
         <guess-panel />
       </div>
     </div>
@@ -31,6 +32,7 @@ import { mapGetters, mapActions } from "vuex";
 import { alphabet, rainbow } from "@/services/constants";
 import Key from "@/components/Key.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
+import LabelDisplay from "@/components/LabelDisplay.vue";
 import GuessPanel from "@/components/GuessPanel.vue";
 
 @Component({
@@ -38,6 +40,7 @@ import GuessPanel from "@/components/GuessPanel.vue";
     Key,
     ImageDisplay,
     GuessPanel,
+    LabelDisplay,
   },
   computed: { ...mapGetters(["is_won"]) },
   methods: { ...mapActions(["pressLetter"]) },
@@ -100,10 +103,16 @@ body {
   min-height: 400px;
   max-width: 50%;
   flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #app-body-right {
   min-width: 400px;
   flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 #app-footer {
   display: flex;
@@ -117,9 +126,15 @@ body {
   max-width: 800px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 820px) {
   #app-body {
     flex-direction: column;
+  }
+  #app-body-left {
+    max-width: 100%;
+  }
+  #app-footer {
+    padding: 0;
   }
 }
 </style>
