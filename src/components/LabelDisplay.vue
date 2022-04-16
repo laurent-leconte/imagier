@@ -28,7 +28,7 @@ import { rainbow } from "@/services/constants";
 })
 export default class LabelDisplay extends Vue {
   currentLetter!: string;
-  get cssProps() {
+  get cssProps(): { [key: string]: string } {
     return {
       "--background-color": rainbow[this.currentLetter],
     };
