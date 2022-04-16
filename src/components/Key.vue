@@ -38,6 +38,7 @@ export default class Key extends Vue {
   min-height: 50px;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 800px) {

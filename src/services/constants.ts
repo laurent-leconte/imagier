@@ -32,8 +32,18 @@ function hslToHex(h: number, s: number, l: number): string {
 }
 
 export const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-export const rainbow: { [key: string]: string } = {};
+export const lightRainbow: { [key: string]: string } = {};
+export const darkRainbow: { [key: string]: string } = {};
 
 [...alphabet].forEach((letter, index) => {
-  rainbow[letter] = hslToHex(index * (360 / (alphabet.length + 1)), 100, 75);
+  lightRainbow[letter] = hslToHex(
+    index * (360 / (alphabet.length + 1)),
+    100,
+    65
+  );
+  darkRainbow[letter] = hslToHex(
+    index * (360 / (alphabet.length + 1)),
+    100,
+    50
+  );
 });

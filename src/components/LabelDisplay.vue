@@ -15,7 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { mapState, mapGetters } from "vuex";
-import { rainbow } from "@/services/constants";
+import { darkRainbow } from "@/services/constants";
 
 @Component({
   computed: {
@@ -30,7 +30,7 @@ export default class LabelDisplay extends Vue {
   currentLetter!: string;
   get cssProps(): { [key: string]: string } {
     return {
-      "--background-color": rainbow[this.currentLetter],
+      "--background-color": darkRainbow[this.currentLetter],
     };
   }
 }
