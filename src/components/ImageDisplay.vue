@@ -19,13 +19,13 @@ import { Image } from "@/models";
 export default class ImageDisplay extends Vue {
   image!: Image;
   get imageUrl(): string {
-    return require("@/assets/images/" + this.image.image);
+    return require("@/assets/images/images/" + this.image.image);
   }
   get imageLabel(): string {
     return this.image.label.toUpperCase();
   }
   get imageSound(): string {
-    return require("@/assets/sounds/" + this.image.sound);
+    return require("@/assets/images/sounds/" + this.image.sound);
   }
 
   playSound(): void {
