@@ -20,7 +20,7 @@ def path_to_assets() -> Path:
 
 def synthesize_label(label: str, output_file: Path) -> None:
     client = boto3.session.Session(profile_name='perso').client('polly')
-    template = f"<speak><p><prosody rate='slow'>{label}</prosody></p></speak>"
+    template = f"<speak><prosody rate='slow'>{label}</prosody></speak>"
     response = client.synthesize_speech(
         OutputFormat="mp3",
         Engine="neural",
@@ -31,6 +31,13 @@ def synthesize_label(label: str, output_file: Path) -> None:
     )
     with (output_file).open("wb") as f:
         f.write(response["AudioStream"].read())
+
+
+def make_alphabet() -> None:
+    assets_dir = path_to_assets() / "letters"
+    for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        synthesize_label(letter, assets_dir / f"{letter}.mp3")
+
 
 def is_valid_image(image_path: Path) -> bool:
     return image_path.is_file() and image_path.suffix in (".png", ".jpg")
@@ -55,8 +62,8 @@ def check_assets(assets_dir: Path, asset_file: str) -> bool:
     
     # check and correct each asset
     assets: List[Asset] = []
-    image_dir = assets_dir / "images"
-    sound_dir = assets_dir / "sounds"
+    image_dir = assets_dir / "images" / "images"
+    sound_dir = assets_dir / "images" / "sounds"
 
     for e in images_db:
         try:
@@ -97,9 +104,10 @@ def check_assets(assets_dir: Path, asset_file: str) -> bool:
     if fixed > 0:
         with open(assets_dir / asset_file, "w") as f:
             json.dump([dataclasses.asdict(a) for a in assets], f, indent=2)
-        print(f"{fixed} fixes made and saved to disk")
+        print(f"{fixed} fix(es) made and saved to disk")
 
     return fixed > 0
 
 if __name__ == "__main__":
     print(check_assets(path_to_assets(), "images.json"))
+    # make_alphabet()
