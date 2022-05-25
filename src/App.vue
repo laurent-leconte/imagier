@@ -29,7 +29,7 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "vue-property-decorator";
 import { mapGetters, mapActions } from "vuex";
-import { alphabet, lightRainbow } from "@/services/constants";
+import { alphabet, darkRainbow } from "@/services/constants";
 import Key from "@/components/Key.vue";
 import ImageDisplay from "@/components/ImageDisplay.vue";
 import LabelDisplay from "@/components/LabelDisplay.vue";
@@ -47,7 +47,7 @@ import GuessPanel from "@/components/GuessPanel.vue";
 })
 export default class App extends Vue {
   alphabet = alphabet; // maps the imported alphabet constant to a property that can be accessed from the template
-  rainbow = lightRainbow;
+  rainbow = darkRainbow;
   is_won!: boolean;
   pressLetter!: (letter: string) => void;
 

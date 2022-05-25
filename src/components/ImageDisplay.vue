@@ -24,13 +24,16 @@ export default class ImageDisplay extends Vue {
   get imageLabel(): string {
     return this.image.label.toUpperCase();
   }
+  // imageSound is only used in imageAudio, but refactoring the 2 methods in one yields a linter error "require not in import"
   get imageSound(): string {
     return require("@/assets/images/sounds/" + this.image.sound);
   }
+  get imageAudio(): HTMLAudioElement {
+    return new Audio(this.imageSound);
+  }
 
   playSound(): void {
-    const audio = new Audio(this.imageSound);
-    audio.play();
+    this.imageAudio.play();
   }
 
   @Watch("image")

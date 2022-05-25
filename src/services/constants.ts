@@ -44,6 +44,6 @@ export const darkRainbow: { [key: string]: string } = {};
   darkRainbow[letter] = hslToHex(
     index * (360 / (alphabet.length + 1)),
     100,
-    50
+    40
   );
 });
