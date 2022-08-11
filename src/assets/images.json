@@ -88,5 +88,59 @@
     "image": "panda.png",
     "sound": "panda.mp3",
     "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "singe",
+    "image": "singe.png",
+    "sound": "singe.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "tortue",
+    "image": "tortue.png",
+    "sound": "tortue.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by studiogstock / Freepik</a>"
+  },
+  {
+    "label": "pomme",
+    "image": "pomme.png",
+    "sound": "pomme.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "poire",
+    "image": "poire.png",
+    "sound": "poire.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "banane",
+    "image": "banane.png",
+    "sound": "banane.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "raisin",
+    "image": "raisin.png",
+    "sound": "raisin.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "kiwi",
+    "image": "kiwi.png",
+    "sound": "kiwi.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "cerise",
+    "image": "cerise.png",
+    "sound": "cerise.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
+  },
+  {
+    "label": "fraise",
+    "image": "fraise.png",
+    "sound": "fraise.mp3",
+    "attribution": "<a href='http://www.freepik.com'>Designed by macrovector / Freepik</a>"
   }
 ]
