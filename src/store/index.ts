@@ -11,6 +11,7 @@ class State {
     this.imageList[Math.floor(Math.random() * this.imageList.length)];
   currentIndex = 0;
   guessed: boolean[] = Array(this.currentImage.label.length).fill(false);
+  wrongLetter = "";
 }
 
 type Context = ActionContext<State, State>;
@@ -40,11 +41,16 @@ export default new Vuex.Store({
       state.guessed = Array(state.currentImage.label.length).fill(false);
       state.currentIndex = 0;
     },
+    updateWrongLetter(state: State, letter: string) {
+      state.wrongLetter = letter;
+    },
   },
   actions: {
     pressLetter({ getters, commit }: Context, letter: string) {
       if (getters.currentLetter === letter) {
         commit("incrementGuessed");
+      } else {
+        commit("updateWrongLetter", letter);
       }
       if (getters.is_won) {
         setTimeout(() => commit("newImage"), 2000);

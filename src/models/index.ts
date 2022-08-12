@@ -1,6 +1,6 @@
 export interface Image {
-    label: string;
-    image: string;
-    sound: string;
-    attribution: string;
+  label: string;
+  image: string;
+  sound: string;
+  attribution: string;
 }
