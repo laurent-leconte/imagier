@@ -36,7 +36,7 @@ npm run lint
 
 ## Asset management
 
-The app relies on an asset catalog stored in `/src/assets/images.json`. The associated resources (images and sounds) are stored in `/src/assets/images/`. A utility script is provided to check and correct the asset catalog content and generate missing sound files using AWS Polly.
+The app relies on an asset catalog stored in `/src/assets/public.json`. The associated resources (images and sounds) are stored in `/src/assets/images/`. A utility script is provided to check and correct the asset catalog content and generate missing sound files using AWS Polly.
 
 To run this script :
 

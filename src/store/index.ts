@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex, { ActionContext } from "vuex";
-import images from "@/assets/images.json";
+import images from "@/assets/public.json";
 import { Image } from "@/models";
 
 Vue.use(Vuex);
@@ -12,6 +12,7 @@ class State {
   currentIndex = 0;
   guessed: boolean[] = Array(this.currentImage.label.length).fill(false);
   wrongLetter = "";
+  rightLetter = "";
 }
 
 type Context = ActionContext<State, State>;
@@ -30,10 +31,11 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    incrementGuessed(state: State) {
+    incrementGuessed(state: State, letter: string) {
       state.guessed[state.currentIndex] = true;
       state.guessed = [...state.guessed];
       state.currentIndex++;
+      state.rightLetter = letter;
     },
     newImage(state: State) {
       state.currentImage =
@@ -44,11 +46,14 @@ export default new Vuex.Store({
     updateWrongLetter(state: State, letter: string) {
       state.wrongLetter = letter;
     },
+    updateRightLetter(state: State, letter: string) {
+      state.rightLetter = letter;
+    },
   },
   actions: {
     pressLetter({ getters, commit }: Context, letter: string) {
       if (getters.currentLetter === letter) {
-        commit("incrementGuessed");
+        commit("incrementGuessed", letter);
       } else {
         commit("updateWrongLetter", letter);
       }
